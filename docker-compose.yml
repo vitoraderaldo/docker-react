@@ -1,0 +1,20 @@
+version: '3'
+services: 
+  web: # Container that will run the application
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000" # Mapping localhost 3000 port to container's port 3000
+    volumes:
+      - /app/node_modules # It will not create a reference for node_modules
+      - .:/app # It will create a reference for every otherfile in the current folder
+
+  tests: # Container that will only run application tests
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules # It will not create a reference for node_modules
+      - .:/app # It will create a reference for every otherfile in the current folder
+    command: ["npm", "test"] # Replace the start command defined on the Dockerfile
