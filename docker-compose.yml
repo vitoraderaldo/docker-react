@@ -17,4 +17,4 @@ services:
     volumes:
       - /app/node_modules # It will not create a reference for node_modules
       - .:/app # It will create a reference for every otherfile in the current folder
-    command: ["npm", "test"] # Replace the start command defined on the Dockerfile
+    command: ["npm", "run", "test"] # Replace the start command defined on the Dockerfile
