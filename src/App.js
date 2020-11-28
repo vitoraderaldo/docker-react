@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Running on container
+          Running a container on EC2 (Using ElasticBeanstalk) 
         </p>
         <a
           className="App-link"
