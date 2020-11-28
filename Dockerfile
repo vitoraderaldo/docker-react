@@ -9,5 +9,6 @@ RUN npm run build
 
 # Step 2: Create an image that runs Nginx with the build files from the the last container
 FROM nginx
+EXPOSE 80
 COPY --from=0 /app/build /usr/share/nginx/html
 # We don't need to specify a start command because Nginx image already has a configuration to start.
